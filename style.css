@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.conteiner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+.field{
+    margin-bottom: 40px;
+    padding: 5px 10px;
+    font-size: 16px;
+    margin-right: 20px;
+}
+
+.conteiner__control{
+    display: flex;      
+    width: 500px; 
+    justify-content: center;
+}
+.range__div {
+    display: flex;
+    flex-direction: column; /* вертикально: текст сверху, ползунок снизу */
+    align-items: center;    /* центрируем по горизонтали */
+    gap: 5px;   
+    margin-right: 20px;            /* расстояние между текстом и ползунком */
+}
+.color__choice-input{
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+}
+
+.playground{
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid black;
+    width: 500px;
+    height: 500px;
+}
+.child{
+    border: 1px solid black;
+    box-sizing: border-box;
+}
