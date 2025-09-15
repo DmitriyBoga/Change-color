@@ -31,10 +31,10 @@ body{
 }
 .range__div {
     display: flex;
-    flex-direction: column; /* вертикально: текст сверху, ползунок снизу */
-    align-items: center;    /* центрируем по горизонтали */
+    flex-direction: column; 
+    align-items: center;    
     gap: 5px;   
-    margin-right: 20px;            /* расстояние между текстом и ползунком */
+    margin-right: 20px;           
 }
 .size{
     background: linear-gradient(135deg, #a18cd1, #fbc2eb);
