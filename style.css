@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    background: linear-gradient(120deg, #fbc2eb, #a6c1ee);
+}
 .conteiner{
     display: flex;
     flex-direction: column;
@@ -16,6 +19,9 @@
     padding: 5px 10px;
     font-size: 16px;
     margin-right: 20px;
+    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+    border-radius: 15px;
+    
 }
 
 .conteiner__control{
@@ -30,6 +36,11 @@
     gap: 5px;   
     margin-right: 20px;            /* расстояние между текстом и ползунком */
 }
+.size{
+    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+    outline: none;
+    cursor: pointer;
+}
 .color__choice-input{
     width: 30px;
     height: 30px;
@@ -42,8 +53,12 @@
     border: 2px solid black;
     width: 500px;
     height: 500px;
+    background-color: white;
 }
 .child{
     border: 1px solid black;
     box-sizing: border-box;
+}
+.size__playgr{
+    font-size: 18px;
 }
