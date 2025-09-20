@@ -62,3 +62,10 @@ body{
 .size__playgr{
     font-size: 18px;
 }
+.delete{
+    padding: 5px 10px;
+    font-size: 16px;
+    margin-top: 20px;
+    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+    border-radius: 15px;
+}

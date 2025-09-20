@@ -4,9 +4,10 @@ const playgroundSize = document.querySelector(".size")
 const randomColorInput = document.querySelector(".color__choice-input")
 const sizeText = document.querySelector(".size__playgr")
 const playground = document.querySelector('.playground')
-//рандомный цвет
+const del = document.querySelector('.delete')
 
 playgroundSize.addEventListener("input", () => sizeText.innerHTML = `${playgroundSize.value} &#215; ${playgroundSize.value}`)
+
 function randomColor (){
     const hex = "012345789ABCDEF";
     let color = "#";
@@ -15,33 +16,44 @@ function randomColor (){
     }
     return color;
 }
-
-function createSquare(n, mode='random'){
-    playground.innerHTML = "";
-    const size = 500/n-1;
-    for (let i=0; i < n*n; i++){
-        const newDiv = document.createElement('div');
-        newDiv.classList.add('child');
-        newDiv.style.flex = `0 0 calc(100% / ${n})`;
-        newDiv.style.height = `calc(100% / ${n})`;
-        
-        
-        newDiv.addEventListener('mouseenter', ()=> {
-            if(mode==="picker"){
-            newDiv.style.backgroundColor = randomColorInput.value;
+function createSquare(n){
+    if(playground.children.length !==n*n){
+        playground.innerHTML = "";
+        for (let i=0; i < n*n; i++){
+            const newDiv = document.createElement('div');
+            newDiv.classList.add('child');
+            newDiv.style.flex = `0 0 calc(100% / ${n})`;
+            newDiv.style.height = `calc(100% / ${n})`;
+            playground.appendChild(newDiv)
+        }
+    }
+}
+function setMode(mode){
+    const children = playground.querySelectorAll('.child')
+    children.forEach(child =>{
+        child.onmouseenter = () =>{
+            if (mode === 'picker'){
+                child.style.backgroundColor = randomColorInput.value;
             }
             else{
-            newDiv.style.backgroundColor = randomColor()
-            }})
-        playground.appendChild(newDiv)
-    }
-    
+                child.style.backgroundColor = randomColor()
+            }
+        }
+    })
 }
 field.addEventListener('click', () => {
-    createSquare(playgroundSize.value, 'picker')
+    createSquare(playgroundSize.value)
+    setMode('picker')
 })
 
 field2.addEventListener('click', () => {
-    createSquare(playgroundSize.value, 'random')
+    createSquare(playgroundSize.value)
+    setMode('random')
+})
+del.addEventListener('click', () => {
+    const children = playground.querySelectorAll('.child');
+    children.forEach(child =>{
+        child.style.backgroundColor = "white";
+    })
 })
 
